@@ -25,7 +25,7 @@ export default function App() {
             .then((actualData) => {
                 setData(actualData);
                 setError(null);
-                console.log("data",actualData);
+                console.log("data", actualData);
             })
             .catch((err) => {
                 setError(err.message);
@@ -38,18 +38,22 @@ export default function App() {
 
 
 
-    return <div className="App">
-        <h1>API Posts</h1>
+    return <div className="container-fluid">
+        <h1>DogReal</h1>
         {loading && <div>A moment please...</div>}
         {error && (
             <div>{`There is a problem fetching the post data - ${error}`}</div>
         )}
-        <ul>
+        <ul className="row justify-content-center">
             {data &&
-                data.map(({ id, name, image }) => (
-                    <li key={id}>
+                data.map(({ id, name, image, bred_for, life_span }) => (
+                    <li key={id} className="col-md-4 col-sm-6 card my-3 py-3 border-0">
                         <h3>{name}</h3>
-                        <img src={image.url} />
+                        <div className="card-img-top text-center">
+                            <img src={image.url} className="photo w-75" />
+                        </div>
+                        <p>{bred_for}</p>
+                        <p>{life_span}</p>
                     </li>
                 ))}
         </ul>
