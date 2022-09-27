@@ -44,11 +44,6 @@ export default function App() {
             });
     }, []);
 
-    // useEffect(() => {
-    //     const menuItems = [...new Set(data.map((Val) => Val.name))];
-    //     console.log("menu items:", menuItems);
-    // })
-
 
     return <div className="container-fluid">
         <h1>DogReal</h1>
