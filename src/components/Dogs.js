@@ -1,12 +1,8 @@
-import { Button } from "bootstrap";
 import { useState, useEffect } from "react";
 import {
-    BrowserRouter as Router,
-    Route,
-    Routes,
     Link
   } from 'react-router-dom';
-import Dog from "./Dog";
+import Loading from "./Loading";
 
 export default function App() {
     const [data, setData] = useState(null);
@@ -45,10 +41,8 @@ export default function App() {
     }, []);
 
 
-    return <div className="container-fluid">
-        <h1>DogReal</h1>
-        
-        {loading && <div>A moment please...</div>}
+    return <div className="container-fluid">        
+        {loading && <div className="text-center"><Loading /></div>}
         {error && (
             <div>{`There is a problem fetching the post data - ${error}`}</div>
         )}

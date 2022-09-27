@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import Dogs from './components/Dogs';
 import Dog from './components/Dog';
-import { useState } from 'react';
+import Logo from './components/Logo';
 import {
   BrowserRouter as Router,
   Route,
@@ -15,17 +14,13 @@ function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/dogs">Dogs</Link>
-            </li>
-          </ul>
-        </nav>
+        <Link to="/">
+        <Logo />
+        </Link>
 
         <Routes>
           <Route
-            exact path="/dogs"
+            exact path="/"
             element={<Dogs />}
           >
           </Route>
