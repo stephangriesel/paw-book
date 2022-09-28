@@ -46,7 +46,7 @@ export default function App() {
                 <div>{`There is a problem fetching the post data - ${error}`}</div>
             )}
             <div>
-                <input
+                <input style = {{textTransform:'lowercase'}}
                     onChange={(event) => {
                         const value = event.target.value;
                         console.log(value)
