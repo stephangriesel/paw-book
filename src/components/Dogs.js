@@ -6,6 +6,7 @@ import Loading from "./Loading";
 
 export default function App() {
     const [data, setData] = useState(null);
+    const [filteredData, setFilteredData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
