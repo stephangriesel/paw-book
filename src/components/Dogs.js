@@ -50,7 +50,7 @@ export default function App() {
                     onChange={(event) => {
                         const value = event.target.value;
                         console.log(value)
-                        const filtered = data.filter((dog) => dog.name.includes(value));
+                        const filtered = data.filter((dog) => dog.name.toLowerCase().includes(value));
                         console.log("filtered", filtered);
                         setFiltered(filtered);
                     }}
