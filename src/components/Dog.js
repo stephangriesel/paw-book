@@ -33,13 +33,13 @@ function Dog() {
     }, [params.name])
 
     return (
-        <div className="info-block">
+        <div className="info-block mt-5">
             <div><img className="dog-img" src={`https://cdn2.thedogapi.com/images/${details.reference_image_id}.jpg`} /></div>
-            <div className="flex-column">
-                <h2>I am a {details.name}</h2>
-                <p>I am best at <span className="dog-p">{details.bred_for}</span></p>
-                <p>If we meet you will think I am <span className="dog-p">{details.temperament}</span></p>
-                <p>I wish I could live forever but normally only between <span className="dog-p">{details.life_span}</span></p>
+            <div className="flex-column m-5">
+                <h3>BREED: {details.name}</h3>
+                <p>BRED FOR: <span className="text-capitalize">{details.bred_for}</span></p>
+                <p>TEMPERAMENT: <span className="text-capitalize">{details.temperament}</span></p>
+                <p>LIFE SPAN: <span className="text-capitalize">{details.life_span}</span></p>
             </div>
         </div>
 
