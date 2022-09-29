@@ -46,7 +46,7 @@ export default function App() {
                 <div>{`There is a problem fetching the post data - ${error}`}</div>
             )}
             <div className="search-box text-center">
-                <input style = {{textTransform:'lowercase'}}
+                <input placeholder="What breed you looking for?" style = {{textTransform:'lowercase'}}
                     onChange={(event) => {
                         const value = event.target.value;
                         console.log(value)
@@ -60,7 +60,7 @@ export default function App() {
                 {filtered.map(({ id, name, image, temperament }) => (
                     <Link
                         to={"/dog/" + id}
-                        className="col-md-4 col-sm-6 card my-3 py-3 border-0"
+                        className="col-md-4 col-sm-6 card my-3 py-3"
                         key={name}
                     >
                         <li className="cards text-center" key={id}>
@@ -68,7 +68,7 @@ export default function App() {
                             <div className="card-img-top text-center">
                                 <img className="card-img-custom" src={image.url} />
                             </div>
-                            <p className="m-2"> I am {temperament}</p>
+                            <p className="m-2">I am <span className="text-lowercase">{temperament}</span></p>
                         </li>
                     </Link>
                 ))}
