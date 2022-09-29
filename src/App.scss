@@ -1,87 +1,126 @@
 /* Reset */
+body {
+    background-color: #e2e2e2;
+}
 * {
-    color:black;
+    color: black;
 }
 
 p {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
 a {
     text-decoration: none;
 }
 
-ul, li {
-    list-style:none;
+ul,
+li {
+    list-style: none;
+    margin:0;
+    padding:0;
 }
 
 /* Layout styles */
 
 .info-block {
-    display:flex;
+    display: flex;
     flex-direction: row;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
+
     .title {
-        margin:0 1rem;
+        margin: 0 1rem;
+    }
+}
+
+.logo-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #ee9d52, #d36790, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    .title {
+        margin: 4rem 2rem;
     }
 }
 
 .flex-column {
-    display:flex;
+    display: flex;
     flex-direction: column;
 }
 
 
 .dog-img {
-    width:100%;
-    max-width:40em;
+    width: 100%;
+    max-width: 40em;
 }
 
 .display-inline {
-    display:flex;
+    display: flex;
 }
 
 .search-box {
     input {
         width: 100%;
-        max-width:50rem;
+        max-width: 50rem;
         text-align: center;
-        font-size:2rem;
+        font-size: 2rem;
         border-radius: 25px;
-        margin:2rem 0;
+        margin: 2rem 0;
     }
 }
 
 .card-img-custom {
-    width:100%;
-    max-width:20rem;
-    margin:1rem;
+    width: 100%;
+    max-width: 20rem;
+    margin: 1rem;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
     transition: ease-in-out 0.4s;
-    &:hover{
-        box-shadow:rgba(0, 0, 0, 0.45) 0px 0px 0px 0px;
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 0px 0px;
     }
 }
+
 /* Component styles */
 
 .loading {
     animation: spin 5s infinite;
 }
 
+/* Animations */
+
 @keyframes spin {
     from {
-        transform:rotate(0deg);
+        transform: rotate(0deg);
     }
+
     to {
-        transform:rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
 @media only screen and (max-width: 600px) {
     .info-block {
-      display:flex;
-      flex-direction: column;
+        display: flex;
+        flex-direction: column;
     }
-  }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

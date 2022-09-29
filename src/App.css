@@ -1,4 +1,8 @@
 /* Reset */
+body {
+  background-color: #e2e2e2;
+}
+
 * {
   color: black;
 }
@@ -12,8 +16,11 @@ a {
   text-decoration: none;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* Layout styles */
@@ -25,6 +32,20 @@ ul, li {
 }
 .info-block .title {
   margin: 0 1rem;
+}
+
+.logo-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #ee9d52, #d36790, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+          animation: gradient 15s ease infinite;
+}
+.logo-block .title {
+  margin: 4rem 2rem;
 }
 
 .flex-column {
@@ -67,6 +88,7 @@ ul, li {
           animation: spin 5s infinite;
 }
 
+/* Animations */
 @-webkit-keyframes spin {
   from {
     transform: rotate(0deg);
@@ -75,7 +97,6 @@ ul, li {
     transform: rotate(360deg);
   }
 }
-
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -88,5 +109,27 @@ ul, li {
   .info-block {
     display: flex;
     flex-direction: column;
+  }
+}
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }/*# sourceMappingURL=App.css.map */
