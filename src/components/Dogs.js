@@ -9,7 +9,7 @@ export default function App({dog}) {
     const [filtered, setFiltered] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const { addDogToFavorites } = useContext(GlobalContext);
+    const { addDogToFavorites, favorites } = useContext(GlobalContext);
 
     useEffect(() => {
         fetch(`https://api.thedogapi.com/v1/breeds`, {
