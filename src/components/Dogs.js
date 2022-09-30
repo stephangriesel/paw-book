@@ -4,6 +4,9 @@ import {
 } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalState';
 import Loading from "./Loading";
+import HeartFull from '../icons/HeartFill';
+import Heart from '../icons/Heart';
+
 export default function App({dog}) {
     const [data, setData] = useState([]);
     const [filtered, setFiltered] = useState([]);
@@ -48,6 +51,7 @@ export default function App({dog}) {
                 <div>{`There is a problem fetching the post data - ${error}`}</div>
             )}
             <div className="search-box text-center">
+                <div className="input-wrapper">
                 <input placeholder="What breed you looking for?" style = {{textTransform:'lowercase'}}
                     onChange={(event) => {
                         const value = event.target.value;
@@ -57,6 +61,10 @@ export default function App({dog}) {
                         setFiltered(filtered);
                     }}
                 />
+                <div className="favorite-box">
+                    <Link className="d-flex" to="/favorites">MY <HeartFull />'s</Link>
+                </div>
+                </div>
             </div>
             <ul className="row justify-content-center">
                 {filtered.map((dog) => (
@@ -72,8 +80,8 @@ export default function App({dog}) {
                             </div>
                             <p className="m-2">I am <span className="text-lowercase">{dog.temperament}</span></p>
                         </li>
-                        <div>
-                            <button onClick={() => addDogToFavorites(dog)} className="btn"><Link to="#">Add to favorite</Link></button>
+                        <div className="text-center">
+                            <div className="text-center" onClick={() => addDogToFavorites(dog)}><Link className="d-flex justify-content-center" to="#"><HeartFull/></Link></div>
                         </div>
                     </Link>
                 ))}

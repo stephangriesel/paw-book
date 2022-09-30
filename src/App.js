@@ -11,24 +11,14 @@ import {
   Link
 } from 'react-router-dom';
 import Favorites from './components/Favorites';
-import Heart from './icons/HeartFill'
 
 function App() {
   return (
     <GlobalProvider>
     <Router>
-      <div>
-      <nav>
-          <ul>
-            <li>
-              <Link to="/"><Logo /></Link>
-            </li>
-            <li>
-              <Link to="/favorites"><Heart /></Link>
-            </li>
-          </ul>
-        </nav>
-
+    <Link to="/">
+    <Logo />
+    </Link>
         <Routes>
           <Route
             exact path="/"
@@ -46,7 +36,6 @@ function App() {
           >
           </Route>
         </Routes>
-      </div>
     </Router>
     </GlobalProvider>
   );

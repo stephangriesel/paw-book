@@ -11,8 +11,10 @@ p {
     padding: 0;
 }
 
-a {
+a, link {
+    color:#000 !important;
     text-decoration: none;
+    transition: 0.5s ease-in-out;
 }
 
 ul,
@@ -64,13 +66,33 @@ li {
 }
 
 .search-box {
+    .input-wrapper {
+        display: flex;
+        justify-content:center;
+        .favorite-box {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin:2rem 1rem;
+            background: #FFF;
+            border-radius: 25px;
+            padding: 1rem;
+            border: 2px solid #000;
+        }
+    };
     input {
+        border: 2px solid #000;
         width: 100%;
         max-width: 50rem;
         text-align: center;
         font-size: 2rem;
         border-radius: 25px;
         margin: 2rem 0;
+    }
+    @media only screen and (max-width: 600px) {
+        input {
+            font-size: 0.8rem;
+        }
     }
 }
 

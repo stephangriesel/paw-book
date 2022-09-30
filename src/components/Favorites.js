@@ -1,8 +1,22 @@
-import React from 'react'
+import React, {useContext} from 'react';
+import { GlobalContext } from '../context/GlobalState';
 
 const Favorites = () => {
+  const {favorites} = useContext(GlobalContext);
   return (
-    <div>Favorites</div>
+    <>
+    <div className='text-center m-5'>
+      <h1>Your Favorites</h1>
+    </div>
+    <div>
+      {favorites.map(dog => (
+        <div className='d-flex justify-content-center flex-column align-items-center m-5'>
+        <img className="w-25" src={dog.image.url}/>
+        <p>{dog.name}</p>
+        </div>
+      ))}
+    </div>
+    </>
   )
 }
 
