@@ -70,6 +70,9 @@ export default function App() {
                             </div>
                             <p className="m-2">I am <span className="text-lowercase">{temperament}</span></p>
                         </li>
+                        <div>
+                            <button className="btn"><Link to="#">Add to favorite</Link></button>
+                        </div>
                     </Link>
                 ))}
             </ul>

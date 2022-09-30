@@ -8,15 +8,23 @@ import {
   Routes,
   Link
 } from 'react-router-dom';
+import Favorites from './components/Favorites';
+import Heart from './icons/HeartFill'
 
 function App() {
-  // const [item, setItem] = useState;
   return (
     <Router>
       <div>
-        <Link to="/">
-        <Logo />
-        </Link>
+      <nav>
+          <ul>
+            <li>
+              <Link to="/"><Logo /></Link>
+            </li>
+            <li>
+              <Link to="/favorites"><Heart /></Link>
+            </li>
+          </ul>
+        </nav>
 
         <Routes>
           <Route
@@ -27,6 +35,11 @@ function App() {
           <Route
             exact path="/dog/:name"
             element={<Dog />}
+          >
+          </Route>
+          <Route
+            exact path="/favorites"
+            element={<Favorites />}
           >
           </Route>
         </Routes>
