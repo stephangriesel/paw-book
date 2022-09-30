@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {
     Link
 } from 'react-router-dom';
+import { GlobalContext } from '../context/GlobalState';
 import Loading from "./Loading";
-export default function App() {
+export default function App({dog}) {
     const [data, setData] = useState([]);
     const [filtered, setFiltered] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const { addDogToFavorites } = useContext(GlobalContext);
 
     useEffect(() => {
         fetch(`https://api.thedogapi.com/v1/breeds`, {
@@ -57,21 +59,21 @@ export default function App() {
                 />
             </div>
             <ul className="row justify-content-center">
-                {filtered.map(({ id, name, image, temperament }) => (
+                {filtered.map((dog) => (
                     <Link
-                        to={"/dog/" + id}
+                        to={"/dog/" + dog.id}
                         className="col-md-4 col-sm-6 card my-3 py-3"
-                        key={name}
+                        key={dog.name}
                     >
-                        <li className="cards text-center" key={id}>
-                            <h3>{name}</h3>
+                        <li className="cards text-center" key={dog.id}>
+                            <h3>{dog.name}</h3>
                             <div className="card-img-top text-center">
-                                <img className="card-img-custom" src={image.url} />
+                                <img className="card-img-custom" src={dog.image.url} />
                             </div>
-                            <p className="m-2">I am <span className="text-lowercase">{temperament}</span></p>
+                            <p className="m-2">I am <span className="text-lowercase">{dog.temperament}</span></p>
                         </li>
                         <div>
-                            <button className="btn"><Link to="#">Add to favorite</Link></button>
+                            <button onClick={() => addDogToFavorites(dog)} className="btn"><Link to="#">Add to favorite</Link></button>
                         </div>
                     </Link>
                 ))}

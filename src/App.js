@@ -1,4 +1,6 @@
 import './App.css';
+import { GlobalProvider } from './context/GlobalState';
+
 import Dogs from './components/Dogs';
 import Dog from './components/Dog';
 import Logo from './components/Logo';
@@ -13,6 +15,7 @@ import Heart from './icons/HeartFill'
 
 function App() {
   return (
+    <GlobalProvider>
     <Router>
       <div>
       <nav>
@@ -45,6 +48,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </GlobalProvider>
   );
 }
 
