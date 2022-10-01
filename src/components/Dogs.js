@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import {
     Link
 } from 'react-router-dom';
+import { Fade } from "react-awesome-reveal";
 import { GlobalContext } from '../context/GlobalState';
 import Loading from "./Loading";
 import HeartFull from '../icons/HeartFill';
@@ -73,6 +74,7 @@ export default function App({dog}) {
                         className="col-md-4 col-sm-6 card my-3 py-3"
                         key={dog.name}
                     >
+                        <Fade delay={200}>
                         <li className="cards text-center" key={dog.id}>
                             <h3>{dog.name}</h3>
                             <div className="card-img-top text-center">
@@ -83,6 +85,7 @@ export default function App({dog}) {
                         <div className="text-center">
                             <div className="text-center" onClick={() => addDogToFavorites(dog)}><Link className="d-flex justify-content-center" to="#"><HeartFull/></Link></div>
                         </div>
+                        </Fade>
                     </Link>
                 ))}
             </ul>
