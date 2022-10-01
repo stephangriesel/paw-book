@@ -6,7 +6,6 @@ import { Fade } from "react-awesome-reveal";
 import { GlobalContext } from '../context/GlobalState';
 import Loading from "./Loading";
 import HeartFull from '../icons/HeartFill';
-import Heart from '../icons/Heart';
 
 export default function App({dog}) {
     const [data, setData] = useState([]);
