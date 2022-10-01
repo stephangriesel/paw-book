@@ -10,8 +10,8 @@ const Favorites = () => {
     </div>
     <div>
       {favorites.map(dog => (
-        <div className='d-flex justify-content-center flex-column align-items-center m-5'>
-        <img className="w-25" src={dog.image.url}/>
+        <div key={dog.id}  className='d-flex justify-content-center flex-column align-items-center m-5'>
+        <img className="w-75" src={dog.image.url}/>
         <p>{dog.name}</p>
         </div>
       ))}
