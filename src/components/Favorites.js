@@ -22,9 +22,11 @@ const Favorites = () => {
         <div>
           {favorites.map(dog => (
             <>
-              <div>
-                <Link className='text-center' onClick={clearStorage}>
-                  <Trash />
+              <div className='text-center'>
+                <Link onClick={clearStorage}>
+                <button>
+                <Trash />Clear All
+                </button>  
                 </Link>
               </div>
               <div key={dog.id} className='d-flex justify-content-center flex-column align-items-center m-5'>

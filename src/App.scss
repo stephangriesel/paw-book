@@ -36,6 +36,12 @@ li {
 
 /* Layout styles */
 
+button {
+    border-radius: 15px;
+    border:solid black 2px;
+    padding:1rem;
+}
+
 .info-block {
     display: flex;
     flex-direction: row;
