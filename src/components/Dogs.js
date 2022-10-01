@@ -77,7 +77,7 @@ export default function App({dog}) {
                         <li className="cards text-center" key={dog.id}>
                             <h3>{dog.name}</h3>
                             <div className="card-img-top text-center">
-                                <img className="card-img-custom" src={dog.image.url} />
+                                <img className="card-img-custom" alt="dog" src={dog.image.url} />
                             </div>
                             <p className="m-2">I am <span className="text-lowercase">{dog.temperament}</span></p>
                         </li>
