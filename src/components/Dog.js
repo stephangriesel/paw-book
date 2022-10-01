@@ -26,8 +26,8 @@ function Dog() {
     }
 
     useEffect(() => {
-        fetchDetails();
-    }, [params.name], [fetchDetails])
+        fetchDetails(params.name);
+    }, [params.name])
 
     return (
         <div className="info-block mt-5">
