@@ -17,6 +17,7 @@ export default function App({dog}) {
     useEffect(() => {
         fetch(`https://api.thedogapi.com/v1/breeds`, {
             method: "GET", // default GET
+            mode: "cors",
             headers: {
                 "Content-Type": "application/json",
                 "x-api-key": `${process.env.REACT_APP_API_KEY}`

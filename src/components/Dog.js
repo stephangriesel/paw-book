@@ -17,6 +17,7 @@ function Dog() {
                         'x-api-key': `${process.env.REACT_APP_API_KEY}`,
 
                     },
+                    mode: "cors",
                 })
 
         const detailData = await data.json();
