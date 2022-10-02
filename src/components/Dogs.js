@@ -74,7 +74,7 @@ export default function App() {
                             const filtered = data.filter((dog) => dog.name.toLowerCase().includes(value));
                             console.log("filtered", filtered);
                             setFiltered(filtered);
-                            window.history.replaceState(null, null, '/' );
+                            window.history.pushState(null, null, '/' );
                         }}
                     />
                     <div className="favorite-box">
