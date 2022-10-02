@@ -25,6 +25,7 @@ export default function App({dog}) {
             },
             referrerPolicy:"same-origin",
             keepalive:true,
+            cache:"reload",
         })
             .then((response) => {
                 console.log("check header response",response);
