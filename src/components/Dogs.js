@@ -19,6 +19,7 @@ export default function App({dog}) {
             method: "GET",
             mode: "cors",
             headers: {
+                Accept: "application/json",
                 "Content-Type": "application/json",
                 "x-api-key": `${process.env.REACT_APP_API_KEY}`
             }
@@ -48,10 +49,6 @@ export default function App({dog}) {
 
     return (
         <div className="container-fluid">
-            {loading && <div className="text-center"><Loading /></div>}
-            {error && (
-                <div>{`There is a problem fetching the post data - ${error}`}</div>
-            )}
             <div className="search-box text-center">
                 <div className="input-wrapper">
                 <input placeholder="What breed you looking for?" style = {{textTransform:'lowercase'}}
@@ -68,6 +65,10 @@ export default function App({dog}) {
                 </div>
                 </div>
             </div>
+            {loading && <div className="text-center"><Loading /></div>}
+            {error && (
+                <div>{`There is a problem fetching the post data - ${error}`}</div>
+            )}
             <ul className="row justify-content-center">
                 {filtered.map((dog) => (
                     <div
