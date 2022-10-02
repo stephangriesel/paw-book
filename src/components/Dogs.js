@@ -42,7 +42,6 @@ export default function App() {
                     setData(actualData);
                     setFiltered(actualData);
                     console.log(actualData);
-                    setTimeout(function(){ window.location.reload(); }, 7000);
                 })
                 .catch((err) => {
                     console.error('Issue fetching');
