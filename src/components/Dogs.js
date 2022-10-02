@@ -19,12 +19,14 @@ export default function App({dog}) {
             method: "GET",
             mode: "cors",
             headers: {
-                Accept: "application/json",
+                "Accept": "application/json",
                 "Content-Type": "application/json",
                 "x-api-key": `${process.env.REACT_APP_API_KEY}`
             },
             credentials: "same-origin",
             keepalive:true,
+            cache: "reload",
+            
         })
             .then((response) => {
                 console.log("check header response",response);
