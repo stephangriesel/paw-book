@@ -26,6 +26,7 @@ export default function App({dog}) {
             credentials: "same-origin",
         })
             .then((response) => {
+                console.log("check header response",response)
                 if (!response.ok) {
                     throw new Error(
                         `This is an HTTP error: The status is ${response.status}`
