@@ -16,7 +16,7 @@ export default function App({dog}) {
 
     useEffect(() => {
         fetch(`https://api.thedogapi.com/v1/breeds`, {
-            method: "GET", // default GET
+            method: "GET",
             mode: "cors",
             headers: {
                 "Content-Type": "application/json",
@@ -37,6 +37,7 @@ export default function App({dog}) {
                 console.log(actualData);
             })
             .catch((err) => {
+                console.error('Issue fetching');
                 setError(err.message);
                 setData(null);
             })
@@ -69,8 +70,7 @@ export default function App({dog}) {
             </div>
             <ul className="row justify-content-center">
                 {filtered.map((dog) => (
-                    <Link
-                        to={"/dog/" + dog.id}
+                    <div
                         className="col-md-4 col-sm-6 card my-3 py-3"
                         key={dog.name}
                     >
@@ -78,15 +78,17 @@ export default function App({dog}) {
                         <li className="cards text-center" key={dog.id}>
                             <h3>{dog.name}</h3>
                             <div className="card-img-top text-center">
+                                <Link to={"/dog/" + dog.id}>
                                 <img className="card-img-custom" alt="dog" src={dog.image.url} />
+                                </Link>
                             </div>
                             <p className="m-2">I am <span className="text-lowercase">{dog.temperament}</span></p>
                         </li>
                         <div className="text-center">
-                            <div className="text-center" onClick={() => addDogToFavorites(dog)}><Link className="d-flex justify-content-center" to="#"><HeartFull/></Link></div>
+                            <div className="text-center" onClick={() => addDogToFavorites(dog)}><Link to="#" className="d-flex justify-content-center"><HeartFull/></Link></div>
                         </div>
                         </Fade>
-                    </Link>
+                    </div>
                 ))}
             </ul>
         </div>
