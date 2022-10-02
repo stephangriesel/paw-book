@@ -91,7 +91,8 @@ export default function App({dog}) {
                                 <img className="card-img-custom" alt="dog" src={dog.image.url} />
                                 </Link>
                             </div>
-                            <p className="m-2">I am <span className="text-lowercase">{dog.temperament}</span></p>
+                            {dog.id !== 196 && dog.id !== 197 && dog.id !== 261 ?
+                            <p className="m-2">I am <span className="text-lowercase">{dog.temperament}</span></p> : <div>I am loving dog</div>}
                         </li>
                         <div className="text-center">
                             <div className="text-center" onClick={() => addDogToFavorites(dog)}><Link to="#" className="d-flex justify-content-center"><HeartFull/></Link></div>
