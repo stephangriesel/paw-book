@@ -28,7 +28,8 @@ export default function App({dog}) {
             cache:"reload",
         })
             .then((response) => {
-                console.log("check header response",response);
+                console.log("check response",response);
+                console.log("check response status",response.status);
                 for(let h of response.headers){
                     console.log("check headers",h);
                 }
