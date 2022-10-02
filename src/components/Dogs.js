@@ -22,7 +22,8 @@ export default function App({dog}) {
                 Accept: "application/json",
                 "Content-Type": "application/json",
                 "x-api-key": `${process.env.REACT_APP_API_KEY}`
-            }
+            },
+            credentials: "same-origin",
         })
             .then((response) => {
                 if (!response.ok) {
