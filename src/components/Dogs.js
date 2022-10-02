@@ -23,7 +23,6 @@ export default function App({dog}) {
                 "Content-Type": "application/json",
                 "x-api-key": `${process.env.REACT_APP_API_KEY}`
             },
-            credentials: "same-origin",
         })
             .then((response) => {
                 console.log("check header response",response);
