@@ -20,15 +20,15 @@ const Favorites = () => {
       {favorites.length > 0 ?
 
         <div>
+          <div className='text-center'>
+            <Link onClick={clearStorage}>
+              <button>
+                <Trash />Clear All
+              </button>
+            </Link>
+          </div>
           {favorites.map(dog => (
             <>
-              <div className='text-center'>
-                <Link onClick={clearStorage}>
-                <button>
-                <Trash />Clear All
-                </button>  
-                </Link>
-              </div>
               <div key={dog.id} className='d-flex justify-content-center flex-column align-items-center m-5'>
                 <img className="w-50" alt="dog" src={dog.image.url} />
                 <p>{dog.name}</p>
