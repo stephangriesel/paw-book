@@ -66,6 +66,7 @@ export default function App({dog}) {
                         const filtered = data.filter((dog) => dog.name.toLowerCase().includes(value));
                         console.log("filtered", filtered);
                         setFiltered(filtered);
+                        fetch('https://api.thedogapi.com/v1/breeds');
                     }}
                 />
                 <div className="favorite-box">
