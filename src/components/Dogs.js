@@ -24,9 +24,8 @@ export default function App({dog}) {
                 "x-api-key": `${process.env.REACT_APP_API_KEY}`
             },
             credentials: "same-origin",
-            keepalive:true,
-            cache: "reload",
-            
+            cache:"default",
+            keepalive: true,
         })
             .then((response) => {
                 console.log("check header response",response);
