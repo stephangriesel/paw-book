@@ -29,11 +29,8 @@ export default function App() {
                 cache: "reload",
             })
                 .then((response) => {
-                    console.log("check response", response);
+                    console.log("check fetch response", response);
                     console.log("check response status", response.status);
-                    for (let h of response.headers) {
-                        console.log("check headers", h);
-                    }
                     if (!response.ok) {
                         throw new Error(
                             `This is an HTTP error: The status is ${response.status}`
@@ -45,6 +42,7 @@ export default function App() {
                     setData(actualData);
                     setFiltered(actualData);
                     console.log(actualData);
+                    setTimeout(function(){ window.history.replaceState({},'', '/'); }, 5000);
                 })
                 .catch((err) => {
                     console.error('Issue fetching');
