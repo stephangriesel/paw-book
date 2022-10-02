@@ -23,10 +23,15 @@ export default function App({dog}) {
                 "Content-Type": "application/json",
                 "x-api-key": `${process.env.REACT_APP_API_KEY}`
             },
-            credentials: "same-origin",
+            credentials: "include",
+            keepalive: true,
+            
         })
             .then((response) => {
-                console.log("check header response",response)
+                console.log("check header response",response);
+                for(let h of response.headers){
+                    console.log("check headers",h);
+                }
                 if (!response.ok) {
                     throw new Error(
                         `This is an HTTP error: The status is ${response.status}`
