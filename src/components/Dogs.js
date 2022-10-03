@@ -13,7 +13,7 @@ export default function App() {
   const { addDogToFavorites } = useContext(GlobalContext);
 
   const fetchList = async () => {
-    const data = await fetch(`https://api.thedogapi.com/v1/breeds/`, {
+    const data = await fetch(`https://api.thedogapi.com/v1/breeds`, {
       method: "GET",
       mode: "cors",
       headers: {
