@@ -119,6 +119,14 @@ button {
   box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 0px 0px;
 }
 
+.custom-shadow {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  transition: ease-in-out 0.4s;
+}
+.custom-shadow:hover {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 0px 0px;
+}
+
 /* Component styles */
 .loading {
   -webkit-animation: spin 5s infinite;

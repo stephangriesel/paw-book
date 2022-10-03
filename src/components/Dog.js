@@ -33,7 +33,7 @@ function Dog() {
 
     return (
         <div className="info-block mt-5">
-            <div><img className="dog-img" alt="dog" src={`https://cdn2.thedogapi.com/images/${details.reference_image_id}.jpg`} /></div>
+            <div><img className="dog-img custom-shadow" alt="dog" src={`https://cdn2.thedogapi.com/images/${details.reference_image_id}.jpg`} /></div>
             <div className="flex-column m-5">
                 <h3>BREED: {details.name}</h3>
                 <p>BRED FOR: <span className="text-capitalize">{details.bred_for}</span></p>
