@@ -7,7 +7,7 @@ import { GlobalContext } from '../context/GlobalState';
 import Loading from "./Loading";
 import HeartFull from '../icons/HeartFill';
 
-export default function App({dog}) {
+export default function App() {
     const [data, setData] = useState([]);
     const [filtered, setFiltered] = useState([]);
     const [loading, setLoading] = useState(true);
